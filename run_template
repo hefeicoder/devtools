@@ -1,0 +1,8 @@
+docker run -i -v `pwd`:/source/  \
+ -v "$HOME/.ssh/":"/root/.ssh/" \
+ -v "$HOME/.docker/":"/root/.docker/" \
+ -v /var/run/docker.sock:/var/run/docker.sock \
+ -v "/run/host-services/ssh-auth.sock":"/ssh-agent" \
+ -e SSH_AUTH_SOCK="/ssh-agent" \
+ -t ubuntu20:latest \
+ /bin/bash
