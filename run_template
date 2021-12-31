@@ -1,0 +1,6 @@
+docker run -i -v `pwd`:/source/  \
+ -v "$HOME/.ssh/":"/root/.ssh/" \
+ -v "$HOME/.docker/":"/root/.docker/" \
+ -v /var/run/docker.sock:/var/run/docker.sock \
+ -t ubuntu20.04arm:latest \
+ /bin/bash
